@@ -2,6 +2,8 @@
 engines:
   bundler-audit:
     enabled: true
+    config:
+      path: test/Gemfile.lock
   duplication:
     enabled: true
     config:
