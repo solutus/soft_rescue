@@ -1,0 +1,21 @@
+AllCops:
+  Exclude:
+    - bin/**/*
+    - soft_rescue.gemspec
+
+Metrics/LineLength:
+  Enabled: true
+  Max: 120
+
+Metrics/ClassLength:
+  Enabled: true
+  Exclude:
+    - test/**/*
+
+Metrics/BlockLength:
+  Enabled: true
+  Exclude:
+    - test/**/*
+
+Style/Documentation:
+  Enabled: false
