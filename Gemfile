@@ -6,4 +6,5 @@ gemspec
 group :test do
   gem 'rake'
   gem 'rubocop'
+  gem 'simplecov'
 end
