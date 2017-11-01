@@ -41,10 +41,7 @@ class SoftRescueTest < Minitest::Test
         end
       end
 
-      it 'raises exception' do
-        block = -> { SoftRescue.call { raise } }
-        block.must_raise RuntimeError
-      end
+      it { -> { SoftRescue.call { raise } }.must_raise RuntimeError }
     end
 
     describe 'when enabled is true' do
