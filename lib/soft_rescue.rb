@@ -1,6 +1,8 @@
 require 'soft_rescue/version'
 
+# SoftRescue provides logic to handle exception in soft manner.
 module SoftRescue
+  # usage:
   # SoftRescue.configure do |config|
   #  config.logger = Logger.new
   #  config.enabled = Rails.env.production?
@@ -10,6 +12,7 @@ module SoftRescue
     yield Config
   end
 
+  # usage:
   # SoftRescue.call(on_failure: 0, message: "my custom exception info")
   # SoftRescue.call(on_failure: -> { puts "fail!" }, message: "my custom exception info")
   def self.call(on_failure: nil, message: nil)
@@ -18,13 +21,14 @@ module SoftRescue
     ExceptionHandler.new(exception, on_failure, message).handle
   end
 
-  # private logic
   module Config
     class << self
+      # :reek:Attribute
       attr_accessor :logger, :capture_exception, :enabled
     end
   end
 
+  # handles exceptions according to Config settings
   class ExceptionHandler
     def initialize(exception, on_failure, message)
       @exception = exception
@@ -34,25 +38,24 @@ module SoftRescue
 
     def handle
       raise @exception unless Config.enabled
-      handle_exception
+      raise_alternative
     end
 
     private
 
-    def handle_exception
+    def raise_alternative
       log
       capture_exception
       handle_failure
     end
 
     def log
-      return unless Config.logger
       message = [@message, @exception.message].compact.join('. ')
-      Config.logger.error message
+      Config.logger.try :error, message
     end
 
     def capture_exception
-      Config.capture_exception.call(@exception) if Config.capture_exception
+      Config.capture_exception.try(:call, @exception)
     end
 
     def handle_failure

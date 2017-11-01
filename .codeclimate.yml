@@ -3,7 +3,7 @@ engines:
   bundler-audit:
     enabled: true
     config:
-      path: test/Gemfile.lock
+      path: Gemfile.lock
   duplication:
     enabled: true
     config:
@@ -16,15 +16,12 @@ engines:
     enabled: true
   rubocop:
     enabled: true
+  flog:
+    enabled: true
+  reek:
+    enabled: true
 ratings:
   paths:
   - Gemfile.lock
-  - "**.inc"
-  - "**.js"
-  - "**.jsx"
-  - "**.module"
-  - "**.php"
-  - "**.py"
-  - "**.rb"
 exclude_paths:
 - test/
