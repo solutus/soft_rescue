@@ -1,4 +1,4 @@
-# SoftRescue 
+# SoftRescue
 
 This gem helps to handle exceptions in soft manner using configured modes.
 
@@ -33,7 +33,7 @@ SoftRescue.configure do |config|
 end
 ```
 
-Use `SoftRescue.call` method not to raise exception, but just log it and return result of on_failure.
+Use `SoftRescue.call` method not to raise exception, but just to log it and to return the result of on_failure.
 
 ```ruby
 
