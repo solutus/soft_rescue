@@ -50,12 +50,16 @@ module SoftRescue
     end
 
     def log
-      message = [@message, @exception.message].compact.join('. ')
-      Config.logger.try :error, message
+      logger = Config.logger
+      return unless logger
+
+      logger.error [@message, @exception.message].compact.join('. ')
     end
 
     def capture_exception
-      Config.capture_exception.try(:call, @exception)
+      capturer = Config.capture_exception
+      return unless capturer
+      capturer.call @exception
     end
 
     def handle_failure
