@@ -1,17 +1,10 @@
 ---
 engines:
-  bundler-audit:
-    enabled: true
-    config:
-      path: Gemfile.lock
   duplication:
     enabled: true
     config:
       languages:
       - ruby
-      - javascript
-      - python
-      - php
   fixme:
     enabled: true
   rubocop:
