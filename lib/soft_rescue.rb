@@ -1,18 +1,18 @@
-require "soft_rescue/version"
+require 'soft_rescue/version'
 
-
-#SoftRescue.configure do |config|
+# SoftRescue.configure do |config|
 #  config.logger = Logger.new
 #  config.enabled = Rails.env.production?
 #  config.capture_exception = -> exception { Raven.capture_exception(exception) }
-#end
+# end
 #
-#SoftRescue.call(on_failure: 0, message: "Hi")
+# SoftRescue.call(on_failure: 0, message: "Hi")
 
 module SoftRescue
   module Config
-    extend self
-    attr_accessor :logger, :capture_exception, :enabled
+    class << self
+      attr_accessor :logger, :capture_exception, :enabled
+    end
   end
 
   def self.configure
@@ -29,9 +29,7 @@ module SoftRescue
       Config.logger.error(message)
     end
 
-    if Config.capture_exception
-      Config.capture_exception.call(exception)
-    end
+    Config.capture_exception.call(exception) if Config.capture_exception
 
     on_failure.is_a?(Proc) ? on_failure.call : on_failure
   end
