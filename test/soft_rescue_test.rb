@@ -146,7 +146,7 @@ class SoftRescueTest < Minitest::Test
             SoftRescue.call { 2 * 2 }
           end
         end
-      end # describe "when exception is not raised"
-    end # describe "when enabled is true"
-  end # describe ".soft_rescue"
-end # class SoftRescueTest
+      end
+    end
+  end
+end
