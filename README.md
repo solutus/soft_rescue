@@ -1,4 +1,4 @@
-# SoftRescue
+# SoftRescue 
 
 This gem helps to handle exceptions in soft manner using configured modes.
 
@@ -65,5 +65,10 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+The gem is available as open source undhttps://travis-ci.org/solutus/soft_rescue.svg?branch=masterer the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+## Build statuses
+
+[![Build Status](https://travis-ci.org/solutus/soft_rescue.svg)](https://travis-ci.org/solutus/soft_rescue)
+
 
