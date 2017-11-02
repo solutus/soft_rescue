@@ -68,7 +68,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 The gem is available as open source undhttps://travis-ci.org/solutus/soft_rescue.svg?branch=masterer the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
 ## Build statuses
-
-[![Build Status](https://travis-ci.org/solutus/soft_rescue.svg)](https://travis-ci.org/solutus/soft_rescue)
+[![Maintainability](https://api.codeclimate.com/v1/badges/d0e9630056a4e635891c/maintainability)](https://codeclimate.com/github/solutus/soft_rescue/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/d0e9630056a4e635891c/test_coverage)](https://codeclimate.com/github/solutus/soft_rescue/test_coverage)
 
 
