@@ -33,6 +33,7 @@ SoftRescue.configure do |config|
 end
 ```
 
+### Usage
 Use `SoftRescue.call` method not to raise exception, but just to log it and to return the result of on_failure.
 
 ```ruby
